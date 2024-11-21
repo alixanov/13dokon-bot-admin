@@ -1,0 +1,181 @@
+.modal {
+     z-index: 1000;
+     left: 0;
+     top: 0;
+     width: 100%;
+     height: 100vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     position: fixed;
+     overflow: auto;
+     background-color: rgba(0, 0, 0, 0.7);
+     /* Темный фон для большей контрастности */
+}
+
+.modal-content {
+     background-color: #2b2b2b;
+     /* Темно-серый фон */
+     padding: 20px;
+     border: 1px solid #444;
+     /* Более тонкая граница */
+     width: 70%;
+     max-width: 400px;
+     margin: auto;
+     border-radius: 12px;
+     box-shadow: 0 4px 15px rgba(0, 255, 255, 0.4);
+     /* Неоновая подсветка */
+}
+
+.close {
+     color: #999;
+     float: right;
+     font-size: 28px;
+     font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+     color: #0ff;
+     /* Неоновый голубой */
+     text-decoration: none;
+     cursor: pointer;
+}
+
+.modal__form {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     gap: 10px;
+}
+
+.modal__form>input {
+     width: 300px;
+     height: 45px;
+     padding: 8px;
+     border-radius: 8px;
+     outline: none;
+     border: 1px solid #444;
+     /* Тонкая серая рамка */
+     background-color: #333;
+     /* Темный фон для ввода */
+     color: #ddd;
+     /* Светлый текст */
+     font-size: 16px;
+     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modal__form>input:focus {
+     border-color: #0ff;
+     /* Неоновая голубая рамка */
+     box-shadow: 0 0 10px #0ff;
+     /* Подсветка при фокусе */
+}
+
+.modal__form>button {
+     width: 200px;
+     height: 45px;
+     background-color: #444;
+     /* Темно-серый фон */
+     font-size: 18px;
+     color: #0ff;
+     /* Неоновый голубой текст */
+     border-radius: 8px;
+     cursor: pointer;
+     border: 1px solid #0ff;
+     /* Неоновая рамка */
+     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.modal__form>button:hover {
+     background-color: #0ff;
+     /* Голубой фон */
+     color: #2b2b2b;
+     /* Темный текст */
+     box-shadow: 0 4px 15px rgba(0, 255, 255, 0.6);
+     /* Подсветка */
+}
+
+.modal__form>button:active {
+     background-color: #08f;
+     /* Более насыщенный голубой */
+     transform: scale(0.98);
+     /* Легкое уменьшение кнопки */
+     box-shadow: 0 2px 10px rgba(0, 255, 255, 0.4);
+}
+@media (max-width: 1024px) {
+
+     /* Планшеты */
+     .modal-content {
+          width: 90%;
+          max-width: 350px;
+          padding: 15px;
+     }
+
+     .modal__form>input {
+          width: 250px;
+          height: 40px;
+          font-size: 14px;
+     }
+
+     .modal__form>button {
+          width: 180px;
+          height: 40px;
+          font-size: 16px;
+     }
+}
+
+@media (max-width: 768px) {
+
+     /* Мобильные устройства */
+     .modal-content {
+          width: 95%;
+          max-width: 300px;
+          padding: 10px;
+     }
+
+     .modal__form>input {
+          width: 220px;
+          height: 35px;
+          font-size: 14px;
+          padding: 6px;
+     }
+
+     .modal__form>button {
+          width: 160px;
+          height: 40px;
+          font-size: 14px;
+     }
+
+     .close {
+          font-size: 24px;
+     }
+}
+
+@media (max-width: 480px) {
+
+     /* Узкие экраны, например, старые смартфоны */
+     .modal-content {
+          width: 95%;
+          max-width: 280px;
+          padding: 10px;
+     }
+
+     .modal__form>input {
+          width: 200px;
+          height: 30px;
+          font-size: 12px;
+          padding: 4px;
+     }
+
+     .modal__form>button {
+          width: 140px;
+          height: 35px;
+          font-size: 12px;
+     }
+
+     .close {
+          font-size: 20px;
+     }
+}
