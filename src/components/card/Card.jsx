@@ -15,7 +15,7 @@ const Card = () => {
 
      useEffect(() => {
           axios
-               .get('http://localhost:8080/api/getall')
+               .get('https://13dokon-bot-server.vercel.app/api/getall')
                .then((response) => setData(response.data))
                .catch((error) => console.error('Ошибка при получении данных:', error));
      }, [deleteState]);
@@ -23,7 +23,7 @@ const Card = () => {
      const handleDelete = (id) => {
           setIsLoading(true);
           axios
-               .delete(`http://localhost:8080/api/delete/${id}`)
+               .delete(`https://13dokon-bot-server.vercel.app/api/delete/${id}`)
                .then(() => {
                     setIsLoading(false);
                     setDeleteState((prev) => !prev);
@@ -43,7 +43,7 @@ const Card = () => {
 
      const handleUpdate = (updatedProduct) => {
           axios
-               .put(`http://localhost:8080/api/update/${editProduct._id}`, updatedProduct)
+               .put(`https://13dokon-bot-server.vercel.app/api/update/${editProduct._id}`, updatedProduct)
                .then(() => {
                     setOpenEditModal(false);
                     setDeleteState((prev) => !prev);

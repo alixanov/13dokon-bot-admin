@@ -16,7 +16,7 @@ const Add = ({ onClose }) => {
      });
 
      const addData = (data) => {
-          axios.post('http://localhost:8080/api/add', data)
+          axios.post('https://13dokon-bot-server.vercel.app/api/add', data)
                .then(response => {
                     notyf.success("Успешно");
                     onClose();
